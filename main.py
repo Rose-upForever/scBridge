@@ -105,9 +105,9 @@ def main(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     # Data configs
-    parser.add_argument("--data_path", type=str)
-    parser.add_argument("--source_data", type=str)
-    parser.add_argument("--target_data", type=str)
+    parser.add_argument("--data_path", type=str,default='D:\生信\代码及数据文件\scBridge\scBridge_new\scBridge\PBMC')
+    parser.add_argument("--source_data", type=str,default='\ASAP-seq.h5ad')
+    parser.add_argument("--target_data", type=str,default='\CITE-seq.h5ad')
     parser.add_argument("--source_preprocess", type=str, default="Standard")
     parser.add_argument("--target_preprocess", type=str, default="TFIDF")
     # Model configs

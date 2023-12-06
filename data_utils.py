@@ -20,7 +20,7 @@ class TensorDataSetWithIndex(TensorDataset):
 
 def prepare_dataloader(args):
     # Load and Preprocess Source (RNA) Data
-    source_adata = sc.read_h5ad(args.data_path + args.source_data)
+    source_adata = sc.read_h5ad(tuple(args.data_path) + tuple(args.target_data))
     if isinstance(source_adata.X, sparse.csr_matrix):
         source_adata.X = source_adata.X.toarray()
     if args.source_preprocess == "Standard":
@@ -42,7 +42,7 @@ def prepare_dataloader(args):
         label_map[k] = source_label[source_label_int == k][0]
 
     # Load and Preprocess Target (ATAC) Data
-    target_adata = sc.read_h5ad(args.data_path + args.target_data)
+    target_adata = sc.read_h5ad(tuple(args.data_path) + tuple(args.target_data))
     if isinstance(target_adata.X, sparse.csr_matrix):
         target_adata.X = target_adata.X.toarray()
     if args.target_preprocess == "Standard":

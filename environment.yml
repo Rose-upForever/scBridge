@@ -1,12 +1,11 @@
-name: scBridge
+name: ne_scBridge
 channels:
-  - conda-forge
   - bioconda
   - defaults
 dependencies:
   - python=3.10.6
   - pytorch=1.13.0
-  - cudatoolkit=11.8.0 
+  - cudatoolkit=11.8.0
   - numpy=1.23.3
   - scanpy=1.9.1
   - scikit-learn=1.1.3
